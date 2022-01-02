@@ -1,0 +1,6 @@
+id,no_penjualan,nama_kasir,tgl_penjualan,jam_penjualan,total,nama_pembeli,piutang,hutang,bayar
+6,PJ1641143323,Ari,03/01/2022,00:08:43,14000,pak rahmadi,,,14000
+7,PJ1641145580,Ari,03/01/2022,00:46:20,12000,pak latan,,,12000
+8,PJ1641145685,Ari,03/01/2022,00:48:05,16000,pak latan,0,16000,0
+9,PJ1641146283,Ari,03/01/2022,00:58:03,8000,pak rahman,2000,0,10000
+10,PJ1641147058,Ari,03/01/2022,01:10:58,29000,Yy,0,0,29000

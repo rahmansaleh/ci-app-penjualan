@@ -1,0 +1,10 @@
+id,kode_barang,nama_barang,harga_beli,harga_jual,stok,satuan
+5,35653739,Indomie Goreng,5500,11000,9997,pcs
+6,80670849,Telur,500,1000,997,pcs
+7,36769144,Aqua,4000,5000,9995,pcs
+8,11970023,Roti Donat,7000,8000,997,pcs
+9,29005085,Roti Coklat Keju,7000,8000,997,pcs
+10,10062476,Roti Kopi Coklat,6000,7000,998,pcs
+11,94178112,Roti Kopi Vanilla,6000,7000,998,pcs
+12,65949653,Gorengan Bakwan,2500,3000,999,pcs
+13,66714436,Gorengan Tahu,3000,3500,997,pcs
