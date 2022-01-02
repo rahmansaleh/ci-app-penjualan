@@ -4,7 +4,7 @@
 	<?php $this->load->view('partials/head.php') ?>
 </head>
 
-<body id="page-top">
+<body id="page-top" class="sidebar-toggled">
 	<div id="wrapper">
 		<!-- load sidebar -->
 		<?php $this->load->view('partials/sidebar.php') ?>
