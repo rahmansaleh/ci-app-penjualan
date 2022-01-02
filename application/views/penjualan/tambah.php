@@ -79,11 +79,8 @@
 										<table class="table table-bordered" id="keranjang">
 											<thead>
 												<tr>
-													<td width="35%">Nama Barang</td>
-													<td width="15%">Harga</td>
-													<td width="15%">Jumlah</td>
-													<td width="10%">Satuan</td>
-													<td width="10%">Sub Total</td>
+													<td width="60%">Nama Barang</td>
+													<td width="25%">Sub Total</td>
 													<td width="15%">Aksi</td>
 												</tr>
 											</thead>
@@ -92,10 +89,10 @@
 											</tbody>
 											<tfoot>
 												<tr>
-													<td colspan="6" align="right" id="total"></td>
+													<td colspan="3" align="right" id="total"></td>
 												</tr>
 												<tr>
-													<td colspan="6" align="right">
+													<td colspan="3" align="right">
 														<strong>Bayar</strong>
 														<br>
 														<input type="number" id="bayar" name="bayar" value="0" class="form-control">
@@ -107,6 +104,8 @@
 														<br>
 														<input type="number" id="hutang" name="hutang" value="0" class="form-control">
 													</td>
+												</tr>
+												<tr>
 													<td colspan="3" align="right">
 														<strong>Piutang</strong>
 														<br>
@@ -114,7 +113,7 @@
 													</td>
 												</tr>
 												<tr>
-													<td colspan="6" align="right">
+													<td colspan="3" align="right">
 														<input type="hidden" name="total_hidden" value="">
 														<input type="hidden" name="max_hidden" value="">
 														<button type="submit" class="btn btn-primary btn-block"><i class="fa fa-save"></i>&nbsp;&nbsp;Simpan</button>

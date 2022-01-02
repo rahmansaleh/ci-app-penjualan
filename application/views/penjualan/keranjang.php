@@ -1,18 +1,9 @@
 <tr class="row-keranjang">
 	<td class="nama_barang">
-		<?= $this->input->post('nama_barang') ?>
+		<?= $this->input->post('jumlah') ?>x <?= $this->input->post('nama_barang') ?>(<?= $this->input->post('harga_barang') ?>)
 		<input type="hidden" name="nama_barang_hidden[]" value="<?= $this->input->post('nama_barang') ?>">
-	</td>
-	<td class="harga_barang">
-		<?= $this->input->post('harga_barang') ?>
 		<input type="hidden" name="harga_barang_hidden[]" value="<?= $this->input->post('harga_barang') ?>">
-	</td>
-	<td class="jumlah">
-		<?= $this->input->post('jumlah') ?>
 		<input type="hidden" name="jumlah_hidden[]" value="<?= $this->input->post('jumlah') ?>">
-	</td>
-	<td class="satuan">
-		<?= strtoupper($this->input->post('satuan')) ?>
 		<input type="hidden" name="satuan_hidden[]" value="<?= $this->input->post('satuan') ?>">
 	</td>
 	<td class="sub_total">
