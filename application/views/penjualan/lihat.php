@@ -47,6 +47,7 @@
 							<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 								<thead>
 									<tr>
+										<td>No.</td>
 										<td>No Penjualan</td>
 										<td>Nama Pembeli</td>
 										<td>Tanggal Penjualan</td>
@@ -55,8 +56,13 @@
 									</tr>
 								</thead>
 								<tbody>
-									<?php foreach ($all_penjualan as $penjualan): ?>
+									<?php 
+										$i = 0;
+										foreach ($all_penjualan as $penjualan):
+										$i++;
+									?>
 										<tr>
+											<td><?= $i; ?></td>
 											<td><?= $penjualan->no_penjualan ?></td>
 											<td><?= $penjualan->nama_pembeli ?></td>
 											<td><?= $penjualan->tgl_penjualan ?> Pukul <?= $penjualan->jam_penjualan ?></td>

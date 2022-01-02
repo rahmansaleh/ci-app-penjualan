@@ -5,7 +5,9 @@ class M_penjualan extends CI_Model {
 
 	public function lihat(){
 		$this->db->from($this->_table);
-		$this->db->limit(80);
+		$this->db->limit(100);
+		$this->db->order_by('tgl_penjualan', 'desc');
+		$this->db->order_by('jam_penjualan', 'desc');
 		return $this->db->get()->result();
 	} 
 
