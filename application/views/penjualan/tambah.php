@@ -52,19 +52,22 @@
 									</div>
 									<div class="form-row">
 										<input type="hidden" name="kode_barang" value="" readonly class="form-control">
-										<div class="form-group col-4">
+										<div class="form-group col-6">
 											<label>Harga Barang</label>
 											<input type="text" name="harga_barang" value="" readonly class="form-control">
 										</div>
-										<div class="form-group col-3">
+										<div class="form-group col-6">
 											<label>Jumlah</label>
 											<input type="number" name="jumlah" value="" class="form-control" readonly min='1'>
 										</div>
-										<div class="form-group col-4">
+										
+									</div>
+									<div class="form-row">
+										<div class="form-group col-9">
 											<label>Sub Total</label>
 											<input type="number" name="sub_total" value="" class="form-control" readonly>
 										</div>
-										<div class="form-group col-1">
+										<div class="form-group col-3">
 											<label for="">&nbsp;</label>
 											<button disabled type="button" class="btn btn-primary btn-block" id="tambah"><i class="fa fa-plus"></i></button>
 										</div>
@@ -89,13 +92,32 @@
 											</tbody>
 											<tfoot>
 												<tr>
-													<td colspan="4" align="right"><strong>Total : </strong></td>
-													<td id="total"></td>
-													
-													<td>
+													<td colspan="6" align="right" id="total"></td>
+												</tr>
+												<tr>
+													<td colspan="6" align="right">
+														<strong>Bayar</strong>
+														<br>
+														<input type="number" id="bayar" name="bayar" value="0" class="form-control">
+													</td>
+												</tr>
+												<tr>
+													<td colspan="3" align="right">
+														<strong>Hutang</strong>
+														<br>
+														<input type="number" id="hutang" name="hutang" value="0" class="form-control">
+													</td>
+													<td colspan="3" align="right">
+														<strong>Piutang</strong>
+														<br>
+														<input type="number" id="piutang" name="piutang" value="0" class="form-control">
+													</td>
+												</tr>
+												<tr>
+													<td colspan="6" align="right">
 														<input type="hidden" name="total_hidden" value="">
 														<input type="hidden" name="max_hidden" value="">
-														<button type="submit" class="btn btn-primary"><i class="fa fa-save"></i>&nbsp;&nbsp;Simpan</button>
+														<button type="submit" class="btn btn-primary btn-block"><i class="fa fa-save"></i>&nbsp;&nbsp;Simpan</button>
 													</td>
 												</tr>
 											</tfoot>
@@ -176,7 +198,8 @@
 							$('table#keranjang tbody').append(data)
 							$('tfoot').show()
 
-							$('#total').html('<strong>' + hitung_total() + '</strong>')
+							$('#total').html('<strong>Total<h4>' + hitung_total() + '</h4></strong>')
+							$('#bayar').val(hitung_total())
 							$('input[name="total_hidden"]').val(hitung_total())
 						}
 					})

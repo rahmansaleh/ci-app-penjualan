@@ -50,7 +50,7 @@
 										<td>No Penjualan</td>
 										<td>Nama Pembeli</td>
 										<td>Tanggal Penjualan</td>
-										<td>Total</td>
+										<td>Pembayaran</td>
 										<td>Aksi</td>
 									</tr>
 								</thead>
@@ -60,7 +60,12 @@
 											<td><?= $penjualan->no_penjualan ?></td>
 											<td><?= $penjualan->nama_pembeli ?></td>
 											<td><?= $penjualan->tgl_penjualan ?> Pukul <?= $penjualan->jam_penjualan ?></td>
-											<td>Rp <?= number_format($penjualan->total, 0, ',', '.') ?></td>
+											<td>
+												Bayar : Rp <?= number_format($penjualan->bayar, 0, ',', '.') ?>
+												<br>
+												<?php if($penjualan->hutang != 0 && isset($penjualan->hutang)) echo "Hutang : Rp".number_format($penjualan->hutang, 0, ',', '.'); ?>
+												<?php if($penjualan->piutang != 0 && isset($penjualan->piutang)) echo "Piutang : Rp".number_format($penjualan->piutang, 0, ',', '.'); ?>
+											</td>
 											<td>
 												<a href="<?= base_url('penjualan/detail/' . $penjualan->no_penjualan) ?>" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>
 												<a onclick="return confirm('apakah anda yakin?')" href="<?= base_url('penjualan/hapus/' . $penjualan->no_penjualan) ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
