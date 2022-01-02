@@ -4,7 +4,9 @@ class M_penjualan extends CI_Model {
 	protected $_table = 'penjualan';
 
 	public function lihat(){
-		return $this->db->get($this->_table)->result();
+		$this->db->from($this->_table);
+		$this->db->limit(80);
+		return $this->db->get()->result();
 	} 
 
 	public function jumlah(){
