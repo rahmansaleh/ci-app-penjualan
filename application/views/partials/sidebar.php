@@ -64,6 +64,18 @@
 				<hr class="sidebar-divider d-none d-md-block">
 			<?php endif; ?>
 
+			<hr class="sidebar-divider">
+
+			<div class="sidebar-heading">
+				Aksi
+			</div>
+			
+			<li class="nav-item">
+				<a class="nav-link" href="<?= base_url('logout') ?>">
+					<i class="fas fa-fw fa-sign-out-alt"></i>
+					<span>Keluar Aplikasi</span></a>
+			</li>
+
 			<!-- Sidebar Toggler (Sidebar) -->
 			<div class="text-center d-none d-md-inline">
 				<button class="rounded-circle border-0" id="sidebarToggle"></button>
