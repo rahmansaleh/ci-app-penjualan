@@ -30,55 +30,37 @@
 							<div class="card-header"><strong>Isi Form Dibawah Ini!</strong></div>
 							<div class="card-body">
 								<form action="<?= base_url('penjualan/proses_tambah') ?>" id="form-tambah" method="POST">
-									<h5>Data Kasir</h5>
-									<hr>
-									<div class="form-row">
-										<div class="form-group col-2">
-											<label>No. Penjualan</label>
-											<input type="text" name="no_penjualan" value="PJ<?= time() ?>" readonly class="form-control">
-										</div>
-										<div class="form-group col-3">
-											<label>Kode Kasir</label>
-											<input type="text" name="kode_kasir" value="<?= $this->session->login['kode'] ?>" readonly class="form-control">
-										</div>
-										<div class="form-group col-3">
-											<label>Nama Kasir</label>
-											<input type="text" name="nama_kasir" value="<?= $this->session->login['nama'] ?>" readonly class="form-control">
-										</div>
-										<div class="form-group col-2">
-											<label>Tanggal Penjualan</label>
-											<input type="text" name="tgl_penjualan" value="<?= date('d/m/Y') ?>" readonly class="form-control">
-										</div>
-										<div class="form-group col-2">
-											<label>Jam</label>
-											<input type="text" name="jam_penjualan" value="<?= date('H:i:s') ?>" readonly class="form-control">
-										</div>
-									</div>
+									<input type="hidden" name="no_penjualan" value="PJ<?= time() ?>" readonly class="form-control">
+									<input type="hidden" name="kode_kasir" value="<?= $this->session->login['kode'] ?>" readonly class="form-control">
+									<input type="hidden" name="nama_kasir" value="<?= $this->session->login['nama'] ?>" readonly class="form-control">
+									<input type="hidden" name="tgl_penjualan" value="<?= date('d/m/Y') ?>" readonly class="form-control">
+									<input type="hidden" name="jam_penjualan" value="<?= date('H:i:s') ?>" readonly class="form-control">
 									<h5>Data Barang</h5>
 									<hr>
+									<div class="form-group">
+										<label for="nama_barang">Pembeli</label>
+										<input type="text" name="nama_pembeli" value="" class="form-control">
+									</div>
+									<div class="form-group">
+										<label for="nama_barang">Nama Barang</label>
+										<select name="nama_barang" id="nama_barang" class="form-control">
+											<option value="">Pilih Barang</option>
+											<?php foreach ($all_barang as $barang): ?>
+												<option value="<?= $barang->nama_barang ?>"><?= $barang->nama_barang ?></option>
+											<?php endforeach ?>
+										</select>
+									</div>
 									<div class="form-row">
-										<div class="form-group col-3">
-											<label for="nama_barang">Nama Barang</label>
-											<select name="nama_barang" id="nama_barang" class="form-control">
-												<option value="">Pilih Barang</option>
-												<?php foreach ($all_barang as $barang): ?>
-													<option value="<?= $barang->nama_barang ?>"><?= $barang->nama_barang ?></option>
-												<?php endforeach ?>
-											</select>
-										</div>
-										<div class="form-group col-2">
-											<label>Kode Barang</label>
-											<input type="text" name="kode_barang" value="" readonly class="form-control">
-										</div>
-										<div class="form-group col-2">
+										<input type="hidden" name="kode_barang" value="" readonly class="form-control">
+										<div class="form-group col-4">
 											<label>Harga Barang</label>
 											<input type="text" name="harga_barang" value="" readonly class="form-control">
 										</div>
-										<div class="form-group col-2">
+										<div class="form-group col-3">
 											<label>Jumlah</label>
 											<input type="number" name="jumlah" value="" class="form-control" readonly min='1'>
 										</div>
-										<div class="form-group col-2">
+										<div class="form-group col-4">
 											<label>Sub Total</label>
 											<input type="number" name="sub_total" value="" class="form-control" readonly>
 										</div>

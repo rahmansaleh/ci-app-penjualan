@@ -48,7 +48,7 @@
 								<thead>
 									<tr>
 										<td>No Penjualan</td>
-										<td>Nama Kasir</td>
+										<td>Nama Pembeli</td>
 										<td>Tanggal Penjualan</td>
 										<td>Total</td>
 										<td>Aksi</td>
@@ -58,7 +58,7 @@
 									<?php foreach ($all_penjualan as $penjualan): ?>
 										<tr>
 											<td><?= $penjualan->no_penjualan ?></td>
-											<td><?= $penjualan->nama_kasir ?></td>
+											<td><?= $penjualan->nama_pembeli ?></td>
 											<td><?= $penjualan->tgl_penjualan ?> Pukul <?= $penjualan->jam_penjualan ?></td>
 											<td>Rp <?= number_format($penjualan->total, 0, ',', '.') ?></td>
 											<td>
