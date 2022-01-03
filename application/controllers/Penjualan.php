@@ -37,6 +37,7 @@ class Penjualan extends CI_Controller {
 			'jam_penjualan' => $this->input->post('jam_penjualan'),
 			'total' => $this->input->post('total_hidden'),
 			'bayar' => $this->input->post('bayar'),
+			'kembalian' => $this->input->post('kembalian'),
 			'hutang' => $this->input->post('hutang'),
 			'piutang' => $this->input->post('piutang'),
 			'nama_pembeli' => $this->input->post('nama_pembeli'),
@@ -58,10 +59,10 @@ class Penjualan extends CI_Controller {
 				$this->m_barang->min_stok($data_detail_penjualan[$i]['jumlah_barang'], $data_detail_penjualan[$i]['nama_barang']) or die('gagal min stok');
 			}
 			$this->session->set_flashdata('success', 'Invoice <strong>Penjualan</strong> Berhasil Dibuat!');
-			redirect('penjualan');
+			redirect('penjualan/tambah');
 		} else {
 			$this->session->set_flashdata('success', 'Invoice <strong>Penjualan</strong> Berhasil Dibuat!');
-			redirect('penjualan');
+			redirect('penjualan/tambah');
 		}
 	}
 
