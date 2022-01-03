@@ -39,7 +39,7 @@
 									<hr>
 									<div class="form-group">
 										<label for="nama_barang">Pembeli</label>
-										<input type="text" name="nama_pembeli" value="" class="form-control">
+										<input type="text" name="nama_pembeli" value="" class="form-control" style="text-transform: uppercase;">
 									</div>
 									<div class="form-group">
 										<label for="nama_barang">Nama Barang</label>

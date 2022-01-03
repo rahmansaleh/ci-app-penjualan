@@ -40,7 +40,7 @@ class Penjualan extends CI_Controller {
 			'kembalian' => $this->input->post('kembalian'),
 			'hutang' => $this->input->post('hutang'),
 			'piutang' => $this->input->post('piutang'),
-			'nama_pembeli' => $this->input->post('nama_pembeli'),
+			'nama_pembeli' => strtoupper($this->input->post('nama_pembeli')),
 		];
 
 		$data_detail_penjualan = [];
