@@ -227,6 +227,9 @@
 				$('option[value="' + $(this).data('nama-barang') + '"]').show()
 
 				if($('tbody').children().length == 0) $('tfoot').hide()
+
+				$('#total').html('<strong>Total<h4>' + hitung_total() + '</h4></strong>')
+				$('input[name="total_hidden"]').val(hitung_total())
 			})
 
 			$('button[type="submit"]').on('click', function(){
