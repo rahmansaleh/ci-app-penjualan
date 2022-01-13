@@ -16,6 +16,7 @@ class M_barang extends CI_Model{
 	public function lihat_stok(){
 		$query = $this->db->select('*');
 		$query = $this->db->where('stok > 1');
+		$query = $this->db->where('aktif', '1');
 		$query = $this->db->order_by('nama_barang');
 		$query = $this->db->get($this->_table);
 		return $query->result();
