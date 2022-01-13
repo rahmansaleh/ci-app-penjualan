@@ -43,7 +43,7 @@
 									</div>
 									<div class="form-group">
 										<label for="nama_barang">Nama Barang</label>
-										<select name="nama_barang" id="nama_barang" class="form-control">
+										<select name="nama_barang" id="nama_barang" class="form-control select2" style="width: 100%;">
 											<option value="">Pilih Barang</option>
 											<?php foreach ($all_barang as $barang): ?>
 												<option value="<?= $barang->nama_barang ?>"><?= $barang->nama_barang ?></option>
@@ -158,6 +158,8 @@
 		      		event.preventDefault();
 			   	}
 			})
+
+			$('#nama_barang').select2();
 
 			$('#nama_barang').on('change', function(){
 
