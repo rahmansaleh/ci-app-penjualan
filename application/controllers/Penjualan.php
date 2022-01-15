@@ -36,10 +36,6 @@ class Penjualan extends CI_Controller {
 			'tgl_penjualan' => $this->input->post('tgl_penjualan'),
 			'jam_penjualan' => $this->input->post('jam_penjualan'),
 			'total' => $this->input->post('total_hidden'),
-			'bayar' => $this->input->post('bayar'),
-			'kembalian' => $this->input->post('kembalian'),
-			'hutang' => $this->input->post('hutang'),
-			'piutang' => $this->input->post('piutang'),
 			'nama_pembeli' => strtoupper($this->input->post('nama_pembeli')),
 		];
 

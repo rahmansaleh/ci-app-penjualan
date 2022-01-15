@@ -93,42 +93,6 @@
 												</tr>
 												<tr>
 													<td colspan="3" align="right">
-														<strong>Bayar</strong>
-														<br>
-														<input type="number" id="bayar" name="bayar" value="0" class="form-control">
-													</td>
-												</tr>
-												<tr>
-													<td colspan="3" align="right">
-														<button type="button" class="btn btn-primary btn-block" onclick="hitung_kembalian();">
-															<i class="fa fa-calculator"></i>&nbsp;&nbsp;Hitung
-														</button>
-													</td>
-												</tr>
-												<tr>
-													<td colspan="3" align="right">
-														<strong>Kembalian</strong>
-														<br>
-														<input type="number" id="kembalian" name="kembalian" value="0" class="form-control">
-													</td>
-													
-												</tr>
-												<tr>
-													<td colspan="3" align="right">
-														<strong>Hutang</strong>
-														<br>
-														<input type="number" id="hutang" name="hutang" value="0" class="form-control">
-													</td>
-												</tr>
-												<tr>
-													<td colspan="3" align="right">
-														<strong>Piutang</strong>
-														<br>
-														<input type="number" id="piutang" name="piutang" value="0" class="form-control">
-													</td>
-												</tr>
-												<tr>
-													<td colspan="3" align="right">
 														<input type="hidden" id="total_hidden" name="total_hidden" value="">
 														<input type="hidden" name="max_hidden" value="">
 														<button type="submit" class="btn btn-primary btn-block"><i class="fa fa-save"></i>&nbsp;&nbsp;Simpan</button>
@@ -261,14 +225,6 @@
 				$('button#tambah').prop('disabled', true)
 			}
 		})
-
-		function hitung_kembalian() {
-			var total = parseInt($('#total_hidden').val())
-			var bayar = parseInt($('#bayar').val())
-
-			$('#kembalian').val(Math.max(0, parseInt(bayar - total)))
-			$('#hutang').val(Math.max(0, parseInt(total - bayar)))
-		}
 	</script>
 </body>
 </html>
