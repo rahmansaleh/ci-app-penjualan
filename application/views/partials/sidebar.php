@@ -42,6 +42,12 @@
 					<span>Transaksi Penjualan</span></a>
 			</li>
 
+			<li class="nav-item <?= $aktif == 'hutang_piutang' ? 'active' : '' ?>">
+				<a class="nav-link" href="<?= base_url('hutang_piutang') ?>">
+					<i class="fas fa-fw fa-credit-card"></i>
+					<span>Hutang Piutang</span></a>
+			</li>
+
 			<?php if ($this->session->login['role'] == 'admin'): ?>
 				
 				<hr class="sidebar-divider">

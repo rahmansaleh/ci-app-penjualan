@@ -20,6 +20,7 @@
 						<h1 class="h3 m-0 text-gray-800"><?= $title ?></h1>
 					</div>
 					<div class="float-right">
+						<a href="<?= base_url('hutang_piutang') ?>" class="btn btn-danger btn-sm" target="_blank"><i class="fa fa-book"></i>&nbsp;&nbsp;Hutang/Piutang</a>
 						<a href="<?= base_url('penjualan') ?>" class="btn btn-secondary btn-sm"><i class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
 					</div>
 				</div>
