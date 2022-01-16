@@ -6,7 +6,8 @@ class Penjualan extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		if($this->session->login['role'] != 'kasir' && $this->session->login['role'] != 'admin') redirect();
-		date_default_timezone_set('Asia/Jakarta');
+		// date_default_timezone_set('Asia/Jakarta');
+		$this->load->helper('date');
 		$this->load->model('M_barang', 'm_barang');
 		$this->load->model('M_penjualan', 'm_penjualan');
 		$this->load->model('M_detail_penjualan', 'm_detail_penjualan');
@@ -14,9 +15,21 @@ class Penjualan extends CI_Controller {
 	}
 
 	public function index(){
-		$this->data['title'] = 'Data Penjualan';
-		$this->data['all_penjualan'] = $this->m_penjualan->lihat();
+		redirect('penjualan/lihat');
+	}
 
+	public function lihat() {
+		$this->data['title'] = 'Data Penjualan';
+		$from = get_date('d/m/Y');
+		$to = get_date('d/m/Y');
+		
+		if(isset($_GET['penjualan-list-daterange'])) {
+
+			$from = change_format_date(trim(explode('-', $_GET['penjualan-list-daterange'])[0]), 'd/m/Y');
+			$to = change_format_date(trim(explode('-', $_GET['penjualan-list-daterange'])[1]), 'd/m/Y');
+		}
+		$this->data['penjualan_list_daterange'] = isset($_GET['penjualan-list-daterange']) ? $_GET['penjualan-list-daterange'] : "";
+		$this->data['all_penjualan'] = $this->m_penjualan->lihat($from, $to);
 		$this->load->view('penjualan/lihat', $this->data);
 	}
 
@@ -102,7 +115,7 @@ class Penjualan extends CI_Controller {
 		$html = $this->load->view('penjualan/report', $this->data, true);
 		$dompdf->load_html($html);
 		$dompdf->render();
-		$dompdf->stream('Laporan Data Penjualan Tanggal ' . date('d F Y'), array("Attachment" => false));
+		$dompdf->stream('Laporan Data Penjualan Tanggal ' . get_date('d F Y'), array("Attachment" => false));
 	}
 
 	public function export_detail($no_penjualan){
@@ -117,6 +130,6 @@ class Penjualan extends CI_Controller {
 		$html = $this->load->view('penjualan/detail_report', $this->data, true);
 		$dompdf->load_html($html);
 		$dompdf->render();
-		$dompdf->stream('Laporan Detail Penjualan Tanggal ' . date('d F Y'), array("Attachment" => false));
+		$dompdf->stream('Laporan Detail Penjualan Tanggal ' . get_date('d F Y'), array("Attachment" => false));
 	}
 }

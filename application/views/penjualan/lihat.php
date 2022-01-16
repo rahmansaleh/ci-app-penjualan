@@ -43,6 +43,30 @@
 				<div class="card shadow">
 					<div class="card-header"><strong>Daftar Penjualan</strong></div>
 					<div class="card-body">
+						<form action="<?= base_url('penjualan/lihat') ?>" method="GET">
+							<div class="form-group">
+								<label>Filter Tanggal :</label>
+								<div class="row">
+									<div class="col-md-10">
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">
+													<i class="far fa-calendar-alt"></i>
+												</span>
+											</div>
+											<input type="text" class="form-control float-right" id="penjualan-list-daterange" name="penjualan-list-daterange" value="<?= $penjualan_list_daterange; ?>">
+										</div>
+									</div>
+									<div class="col-md-2">
+										<button type="submit" class="btn btn-success btn-block">
+											<i class="fas fa-check-circle">
+												&nbsp;&nbsp;Pilih
+											</i>
+										</button>
+									</div>
+								</div>
+							</div>
+						</form>
 						<div class="table-responsive">
 							<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 								<thead>
@@ -93,5 +117,11 @@
 	<script src="<?= base_url('sb-admin/js/demo/datatables-demo.js') ?>"></script>
 	<script src="<?= base_url('sb-admin') ?>/vendor/datatables/jquery.dataTables.min.js"></script>
 	<script src="<?= base_url('sb-admin') ?>/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+	<script src="<?= base_url() ?>assets/moment/moment.min.js"></script>
+	<script src="<?= base_url() ?>assets/daterangepicker/daterangepicker.js"></script>
+	<script>
+		$('#penjualan-list-daterange').daterangepicker();
+	</script>
+	
 </body>
 </html>

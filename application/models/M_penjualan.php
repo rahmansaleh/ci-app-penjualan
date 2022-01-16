@@ -3,9 +3,11 @@
 class M_penjualan extends CI_Model {
 	protected $_table = 'penjualan';
 
-	public function lihat(){
+	public function lihat($from = null, $to = null){
 		$this->db->from($this->_table);
 		$this->db->limit(100);
+		if($from !== null) $this->db->where('tgl_penjualan >=', $from);
+		if($to !== null) $this->db->where('tgl_penjualan <=', $to);
 		$this->db->order_by('tgl_penjualan', 'desc');
 		$this->db->order_by('jam_penjualan', 'desc');
 		return $this->db->get()->result();
