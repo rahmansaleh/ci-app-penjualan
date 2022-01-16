@@ -9,3 +9,4 @@
 	<link href="<?= base_url('sb-admin') ?>/css/sb-admin-2.min.css" rel="stylesheet">
 	<link href="<?= base_url('sb-admin') ?>/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 	<link href="<?= base_url() ?>assets/select2-4.0.10/dist/css/select2.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="<?= base_url() ?>assets/daterangepicker/daterangepicker.css">
