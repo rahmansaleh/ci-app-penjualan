@@ -4,10 +4,11 @@ class M_penjualan extends CI_Model {
 	protected $_table = 'penjualan';
 
 	public function lihat($from = null, $to = null){
-		$this->db->from($this->_table);
-		$this->db->limit(100);
-		if($from !== null) $this->db->where('tgl_penjualan >=', $from);
-		if($to !== null) $this->db->where('tgl_penjualan <=', $to);
+		$this->db->select('a.no_penjualan, a.tgl_penjualan, a.jam_penjualan, a.nama_pembeli, b.nama_barang, b.jumlah_barang, b.harga_barang, b.sub_total');
+		$this->db->from($this->_table.' AS a');
+		$this->db->join('detail_penjualan b', 'a.no_penjualan = b.no_penjualan', 'left');
+		$this->db->where('tgl_penjualan >=', $from);
+		$this->db->where('tgl_penjualan <=', $to);
 		$this->db->order_by('tgl_penjualan', 'desc');
 		$this->db->order_by('jam_penjualan', 'desc');
 		return $this->db->get()->result();
