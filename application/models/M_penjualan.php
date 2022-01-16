@@ -14,6 +14,31 @@ class M_penjualan extends CI_Model {
 		return $this->db->get()->result();
 	} 
 
+	public function total_pendapatan($from = null, $to = null){
+		$this->db->select('IFNULL(SUM(a.total), 0) AS total');
+		$this->db->from($this->_table.' AS a');
+		$this->db->where('tgl_penjualan >=', $from);
+		$this->db->where('tgl_penjualan <=', $to);
+		return $this->db->get()->row();
+	} 
+
+	public function total_barang_terjual($from = null, $to = null){
+		$this->db->select('IFNULL(COUNT(b.nama_barang), 0) AS total');
+		$this->db->from($this->_table.' AS a');
+		$this->db->join('detail_penjualan b', 'a.no_penjualan = b.no_penjualan', 'left');
+		$this->db->where('tgl_penjualan >=', $from);
+		$this->db->where('tgl_penjualan <=', $to);
+		return $this->db->get()->row();
+	} 
+
+	public function total_transaksi($from = null, $to = null){
+		$this->db->select('IFNULL(COUNT(a.no_penjualan), 0) AS total');
+		$this->db->from($this->_table.' AS a');
+		$this->db->where('tgl_penjualan >=', $from);
+		$this->db->where('tgl_penjualan <=', $to);
+		return $this->db->get()->row();
+	} 
+
 	public function jumlah(){
 		$query = $this->db->get($this->_table);
 		return $query->num_rows();

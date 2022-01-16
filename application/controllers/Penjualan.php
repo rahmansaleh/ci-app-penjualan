@@ -29,6 +29,9 @@ class Penjualan extends CI_Controller {
 		}
 		$this->data['penjualan_list_daterange'] = isset($_GET['penjualan-list-daterange']) ? $_GET['penjualan-list-daterange'] : "";
 		$this->data['all_penjualan'] = $this->m_penjualan->lihat($from, $to);
+		$this->data['total_pendapatan'] = "Rp. ".number_format($this->m_penjualan->total_pendapatan($from, $to)->total, 0, ',', '.');
+		$this->data['total_barang_terjual'] = $this->m_penjualan->total_barang_terjual($from, $to)->total." item";
+		$this->data['total_transaksi'] = $this->m_penjualan->total_transaksi($from, $to)->total."x";
 		$this->load->view('penjualan/lihat', $this->data);
 	}
 
