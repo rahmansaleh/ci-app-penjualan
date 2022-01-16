@@ -21,7 +21,7 @@
 					</div>
 					<div class="float-right">
 						<!-- <a href="<?= base_url('penjualan/export') ?>" class="btn btn-danger btn-sm"><i class="fa fa-file-pdf"></i>&nbsp;&nbsp;Export</a> -->
-						<a href="<?= base_url('penjualan/export') ?>" class="btn btn-danger btn-sm"><i class="fa fa-book"></i>&nbsp;&nbsp;Hutang/Piutang</a>
+						<a href="<?= base_url('hutang_piutang') ?>" class="btn btn-danger btn-sm"><i class="fa fa-book"></i>&nbsp;&nbsp;Hutang/Piutang</a>
 						<a href="<?= base_url('penjualan/tambah') ?>" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i>&nbsp;&nbsp;Tambah</a>
 					</div>
 				</div>
@@ -42,7 +42,7 @@
 					</div>
 				<?php endif ?>
 				<div class="card shadow">
-					<div class="card-header"><strong>Daftar Penjualan</strong></div>
+					<div class="card-header"><strong>Filter Penjualan</strong></div>
 					<div class="card-body">
 						<form action="<?= base_url('penjualan/lihat') ?>" method="GET">
 							<div class="form-group">
@@ -68,6 +68,19 @@
 								</div>
 							</div>
 						</form>
+					</div>
+				</div>
+
+				<div class="card shadow">
+					<div class="card-header"><strong>Daftar Penjualan</strong></div>
+					<div class="card-body">
+						<div class="form-group">
+							<label>Total Pendapatan : <b><?= $total_pendapatan; ?></b></label>
+							<br>
+							<label>Barang Terjual : <b><?= $total_barang_terjual; ?></b></label>
+							<br>
+							<label>Jumlah Transaksi : <b><?= $total_transaksi; ?></b></label>
+						</div>
 						<div class="table-responsive">
 							<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 								<thead>
@@ -90,7 +103,7 @@
 											<td><?= $penjualan->nama_pembeli ?></td>
 											<td><?= $penjualan->tgl_penjualan." ".$penjualan->jam_penjualan ?></td>
 											<td><?= $penjualan->jumlah_barang."x ".$penjualan->nama_barang; ?></td>
-											<td><?= number_format($penjualan->sub_total, 0, ',', '.') ?></td>
+											<td><?= "Rp. ".number_format($penjualan->sub_total, 0, ',', '.') ?></td>
 										</tr>
 									<?php endforeach ?>
 								</tbody>
